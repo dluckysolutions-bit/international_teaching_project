@@ -419,9 +419,13 @@ TRUST
 
 .stat-card{
 
-    text-align:center;
+    display:flex;
 
-    padding:1rem 1rem;
+    align-items:center;
+
+    gap:1rem;
+
+    padding:1rem 1.25rem;
 
     border:1px solid var(--border);
 
@@ -433,19 +437,50 @@ TRUST
 
 }
 
-.stat-card h3{
+.stat-icon{
 
-    font-size:2rem;
+    width:48px;
 
-    margin-bottom:.1rem;
+    height:48px;
+
+    display:grid;
+
+    place-items:center;
+
+    flex-shrink:0;
+
+    border-radius:50%;
+
+    background:#eef4ff;
+
+    font-size:1.25rem;
+
+}
+.stat-content{
+
+    display:flex;
+
+    flex-direction:column;
 
 }
 
-.stat-card p{
+.stat-content h3{
 
-    font-size:.95rem;
+    font-size:1.7rem;
 
-    margin:auto;
+    line-height:1;
+
+    margin:0;
+
+}
+
+.stat-content p{
+
+    margin-top:.35rem;
+
+    font-size:.85rem;
+
+    color:var(--text-light);
 
 }
 
