@@ -196,6 +196,11 @@ p{
 .section-heading{
 
     margin-bottom:3rem;
+#gap .section-heading{
+
+    margin-bottom:4rem;
+
+}
 
 }
 
@@ -495,22 +500,39 @@ TRUST
 /*==============================
 GAP SECTION
 ==============================*/
+#gap{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+
 
 .gap-grid{
 
     display:grid;
 
-    gap:2rem;
+    gap:2.5rem;
 
 }
 
+
+
 .gap-grid article{
 
-    padding:2rem;
+    padding:2.5rem;
 
-    border-radius:var(--radius);
+    border-radius:var(--radius-lg);
 
-    background:var(--surface);
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow-sm);
 
 }
 
@@ -520,6 +542,46 @@ GAP SECTION
 
 }
 
+
+.gap-list{
+
+    display:grid;
+    gap:1rem;
+    margin-top:2rem;
+
+}
+
+.gap-list li{
+
+    display:flex;
+    align-items:flex-start;
+    gap:.75rem;
+    color:var(--text);
+
+}
+
+.gap-list li::before{
+
+    content:"✓";
+    color:var(--success);
+    font-weight:700;
+    flex-shrink:0;
+
+}
+
+.gap-conclusion{
+
+    max-width:720px;
+    margin:5rem auto 0;
+    text-align:center;
+
+}
+
+.gap-conclusion>*+*{
+
+    margin-top:1.5rem;
+
+}
 /*==============================
 OFFER
 ==============================*/

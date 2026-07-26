@@ -42,10 +42,19 @@
                             Discover exactly what's preventing Band 7+ and get a clear improvement strategy tailored to your speaking performance.
                         </p>
 
-                        <a href="#assessment" class="btn-primary">
-                            Book Your Speaking Assessment
+                       <a href="#assessment" class="btn-primary">
+                          Book Your Speaking Assessment
                         </a>
 
+                        <div class="hero-reassurance">
+
+                        <span>🕒 20-minute online assessment</span>
+
+                       <span>📄 Personalized report</span>
+
+                        <span>✓ No commitment required</span>
+
+                        </div>
                     </div>
 
                 
@@ -218,7 +227,7 @@
 
 
 
-       <!-- ========================= -->
+<!-- ========================= -->
 <!-- THE GAP -->
 <!-- ========================= -->
 
@@ -293,6 +302,7 @@
     </div>
 
 </section>
+
         <!-- ========================= -->
         <!-- OFFER -->
         <!-- ========================= -->
