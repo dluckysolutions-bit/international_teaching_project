@@ -42,7 +42,7 @@
                             Discover exactly what's preventing Band 7+ and get a clear improvement strategy tailored to your speaking performance.
                         </p>
 
-                        <a href="#assessment" class="btn-primary">
+                        <a href="#assessment-form" class="btn-primary">
                             Book Your Speaking Assessment
                         </a>
 
@@ -277,7 +277,7 @@
             <p>
               Find the criterion that's keeping you at Band 6.5.
 
-            <a href="#offer" class="btn-primary">
+            <a href="#assessment-form" class="btn-primary">
                 Find My Weakest Criterion
             </a>
 
@@ -332,7 +332,7 @@
 
                         </div>
 
-                        <a href="#" class="btn-primary">
+                        <a href="#assessment-form" class="btn-primary">
 
                             Book Assessment
 
@@ -348,6 +348,111 @@
 
 
 
+<!-- ========================= -->
+<!-- ASSESSMENT FORM -->
+<!-- ========================= -->
+
+<section id="assessment-form">
+
+    <div class="container">
+
+        <h2>
+            Find Out What's Holding Your IELTS Score Back
+        </h2>
+
+        <p>
+            Tell me a little about your IELTS goal and I'll use it to understand where you need the most help.
+        </p>
+
+        <form>
+
+            <div>
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div>
+                <label for="whatsapp">WhatsApp Number</label>
+                <input type="tel" id="whatsapp" name="whatsapp" required>
+            </div>
+
+            <div>
+                <label for="current-score">Current IELTS Score</label>
+                <input type="text" id="current-score" name="current-score" required>
+            </div>
+
+            <div>
+                <label for="target-score">Target IELTS Score</label>
+                <input type="text" id="target-score" name="target-score" required>
+            </div>
+
+            <div>
+                <label for="test-date">When is your test?</label>
+                <input type="date" id="test-date" name="test-date" required>
+            </div>
+
+            <div>
+                <label for="difficulty">What is your biggest IELTS difficulty?</label>
+
+                <select id="difficulty" name="difficulty" required>
+
+                    <option value="">
+                        Select one
+                    </option>
+
+                    <option value="fluency">
+                        Fluency & Coherence
+                    </option>
+
+                    <option value="vocabulary">
+                        Vocabulary
+                    </option>
+
+                    <option value="grammar">
+                        Grammar
+                    </option>
+
+                    <option value="pronunciation">
+                        Pronunciation
+                    </option>
+
+                    <option value="not-sure">
+                        I'm not sure
+                    </option>
+
+                </select>
+
+            </div>
+
+            <button type="submit" class="btn-primary">
+            Book My Speaking Assessment
+            </button>
+            
+        </form>
+
+        <div id="form-success" class="form-success" hidden>
+
+    <h3>
+        Your assessment request is in.
+    </h3>
+
+    <p>
+        I'll review your details and contact you shortly with the next step.
+    </p>
+
+</div>
+
+    </div>
+
+</section>
+
+
+
         <!-- ========================= -->
         <!-- FAQ -->
         <!-- ========================= -->
@@ -358,7 +463,7 @@
 
                 <h2>
 
-                    Frequently Asked Questions
+                    Frequently asked questions
 
                 </h2>
 
@@ -368,13 +473,13 @@
 
                         <summary>
 
-                            How quickly can my score improve?
+                            Why am I still stuck at the same IELTS score?
 
                         </summary>
 
                         <p>
 
-                            ...
+                             Because more practice won't fix the wrong problem. We find what's costing you marks, then focus your practice where it matters.
 
                         </p>
 
@@ -384,13 +489,13 @@
 
                         <summary>
 
-                            Is this suitable for Band 5 students?
+                           What if I study for months and still don't get the score I need?
 
                         </summary>
 
                         <p>
 
-                            ...
+                            That's the risk of studying without a clear plan. Find your weak points first, then spend your time fixing them—not guessing.
 
                         </p>
 
@@ -400,13 +505,45 @@
 
                         <summary>
 
-                            Do I need perfect grammar?
+                           How do I know what is keeping my IELTS score low?
 
                         </summary>
 
                         <p>
 
-                            ...
+                            You don't have to guess. We look at your actual performance, find the gaps, and show you what to work on next.
+
+                        </p>
+
+                    </details>
+
+                    <details>
+
+                        <summary>
+
+                            What if my English is not good enough for my target score?
+
+                        </summary>
+
+                        <p>
+
+                            You don't need perfect English. You need the right skills for the score you want. We focus on the gaps between your current level and your target.
+
+                        </p>
+
+                    </details>
+
+                      <details>
+
+                        <summary>
+
+                            How long will it take me to get the score I need?
+
+                        </summary>
+
+                        <p>
+
+                            It depends on where you're starting and where you need to go. Your assessment gives me a clearer picture of the gap—and the work needed to close it.
 
                         </p>
 
@@ -442,7 +579,7 @@
 
                     </p>
 
-                    <a href="#" class="btn-primary">
+                    <a href="#assessment-form" class="btn-primary">
 
                         Book Your Speaking Assessment
 
@@ -455,6 +592,58 @@
         </section>
 
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script>
+    const SUPABASE_URL = "https://qamuvvtijlcffabcrgvb.supabase.co";
+    const SUPABASE_KEY = "sb_publishable_ZZ95SNy_r1jw0JjXnckIiQ_4U-hlXUu";
+
+    const { createClient } = supabase;
+
+    const db = createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+    );
+
+    const form = document.querySelector("#assessment-form form");
+
+    form.addEventListener("submit", async function (event) {
+
+        event.preventDefault();
+
+        const lead = {
+            name: document.querySelector("#name").value,
+            email: document.querySelector("#email").value,
+            whatsapp: document.querySelector("#whatsapp").value,
+            current_score: document.querySelector("#current-score").value,
+            target_score: document.querySelector("#target-score").value,
+            test_date: document.querySelector("#test-date").value,
+            difficulty: document.querySelector("#difficulty").value
+        };
+
+        const { data, error } = await db
+            .from("leads")
+            .insert([lead]);
+
+        if (error) {
+
+            console.error(error);
+
+            alert("Something went wrong. Please try again.");
+
+            return;
+        }
+
+       const successMessage = document.querySelector("#form-success");
+
+            form.reset();
+
+        form.style.display = "none";
+
+        successMessage.hidden = false;
+    });
+</script>
 
 </body>
 
